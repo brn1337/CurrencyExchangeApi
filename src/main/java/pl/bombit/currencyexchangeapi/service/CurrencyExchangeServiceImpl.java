@@ -84,6 +84,7 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
         URL url = new URL(apiUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
+        connection.setRequestProperty("Content-Type", "application/json");
 
         int responseCode = connection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK) {
